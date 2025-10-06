@@ -1,0 +1,45 @@
+{
+    "name": "Haylalàna PWA",
+    "short_name": "Haylalàna",
+    "description": "Plateforme juridique accessible rendant le droit simple et compréhensible pour tous les Malgaches : enfants, jeunes et adultes. Contenus éducatifs, guides pratiques et ressources juridiques vulgarisées.",
+    "start_url": "/",
+    "scope": "/",
+    "display": "standalone",
+    "orientation": "portrait",
+    "background_color": "#ffffff",
+    "categories": [
+        "education",
+        "reference",
+        "productivity"
+    ],
+    "keywords": [
+        "droit",
+        "juridique",
+        "Madagascar",
+        "éducation",
+        "vulgarisation",
+        "justice",
+        "lois",
+        "guides"
+    ],
+    "theme_color": "#0a0a0a",
+    "icons": [
+        {
+            "src": "/icons/haylalana-icon-128x128.png",
+            "sizes": "128x128",
+            "type": "image/png"
+        },
+        {
+            "src": "/icons/haylalana-icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/icons/haylalana-icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ]
+}
