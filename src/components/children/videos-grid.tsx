@@ -1,6 +1,6 @@
 // src/components/enfants/videos-grid.tsx
 import Link from 'next/link';
-import { mockVideos } from '@/lib/mock-data';
+import { mockVideos } from '@/lib/mock-data-children';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
