@@ -1,5 +1,3 @@
-// src/lib/mock-data.ts
-
 export type Story = {
   id: string;
   title: string;

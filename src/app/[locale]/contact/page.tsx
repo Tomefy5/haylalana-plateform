@@ -5,122 +5,125 @@ import { Mail, Phone, MapPin, Clock, MessageCircle } from 'lucide-react';
 
 export default function ContactPage() {
     return (
-        <main className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
+        <main className="min-h-screen bg-gradient-to-br from-haylalana-bg-primary via-haylalana-brand/3 to-haylalana-bg-primary">
 
-            {/* Hero Section */}
-            <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
-                <div className="container mx-auto max-w-7xl text-center">
-
-                    <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20">
-                        <MessageCircle className="w-4 h-4" aria-hidden="true" />
-                        <span className="text-sm font-semibold">Nous contacter</span>
-                    </div>
-
-                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                        Besoin d'aide ou de renseignements ?
-                    </h1>
-
-                    <p className="text-lg sm:text-xl text-blue-100 max-w-2xl mx-auto">
-                        Notre équipe est là pour répondre à toutes vos questions sur vos droits
-                        et l'utilisation de la plateforme Haylalàna
-                    </p>
-                </div>
-            </section>
-
-            {/* Section principale */}
+            {/* Hero Section avec grande carte blanche */}
             <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
                 <div className="container mx-auto max-w-7xl">
 
-                    <div className="grid lg:grid-cols-3 gap-8">
+                    {/* Grande carte blanche centrale */}
+                    <div className="bg-white rounded-3xl shadow-2xl border border-haylalana-border-primary p-8 sm:p-12">
 
-                        {/* Colonne gauche : Infos de contact */}
-                        <div className="lg:col-span-1 space-y-6">
+                        <div className="grid lg:grid-cols-2 gap-12 items-center">
 
+                            {/* Colonne gauche : Contenu */}
                             <div>
-                                <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                                    Informations de contact
-                                </h2>
-                                <p className="text-gray-600 mb-6">
-                                    Vous pouvez nous joindre par les moyens suivants :
-                                </p>
-                            </div>
+                                {/* Badge */}
+                                <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full bg-haylalana-brand/10 border-2 border-haylalana-brand/30">
+                                    <MessageCircle className="w-4 h-4 text-haylalana-brand" aria-hidden="true" />
+                                    <span className="text-sm font-semibold text-haylalana-brand">Nous contacter</span>
+                                </div>
 
-                            {/* Cartes d'info */}
-                            <Card>
-                                <CardContent className="p-6 flex items-start gap-4">
-                                    <div className="p-3 bg-blue-100 rounded-lg">
-                                        <Mail className="w-6 h-6 text-blue-600" aria-hidden="true" />
-                                    </div>
-                                    <div>
-                                        <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
-                                        <a href="mailto:contact@haylalana.mg" className="text-blue-600 hover:underline">
+                                {/* Titre */}
+                                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 leading-tight text-haylalana-heading-primary">
+                                    Besoin d'aide ou{' '}
+                                    <span className="text-haylalana-brand">de renseignements ?</span>
+                                </h1>
+
+                                {/* Description */}
+                                <p className="text-lg text-haylalana-text-secondary mb-8 leading-relaxed">
+                                    Notre équipe est là pour répondre à toutes vos questions sur vos droits
+                                    et l'utilisation de la plateforme Haylalàna
+                                </p>
+
+                                {/* Informations de contact en ligne */}
+                                <div className="space-y-4">
+                                    <div className="flex items-center gap-3">
+                                        <div className="p-2 bg-haylalana-brand/10 rounded-lg">
+                                            <Mail className="w-5 h-5 text-haylalana-brand" aria-hidden="true" />
+                                        </div>
+                                        <a href="mailto:contact@haylalana.mg" className="text-haylalana-brand hover:text-haylalana-brand-dark hover:underline font-medium">
                                             contact@haylalana.mg
                                         </a>
                                     </div>
-                                </CardContent>
-                            </Card>
 
-                            <Card>
-                                <CardContent className="p-6 flex items-start gap-4">
-                                    <div className="p-3 bg-green-100 rounded-lg">
-                                        <Phone className="w-6 h-6 text-green-600" aria-hidden="true" />
-                                    </div>
-                                    <div>
-                                        <h3 className="font-semibold text-gray-900 mb-1">Téléphone</h3>
-                                        <a href="tel:+261340000000" className="text-blue-600 hover:underline">
+                                    <div className="flex items-center gap-3">
+                                        <div className="p-2 bg-haylalana-accent/10 rounded-lg">
+                                            <Phone className="w-5 h-5 text-haylalana-accent" aria-hidden="true" />
+                                        </div>
+                                        <a href="tel:+261340000000" className="text-haylalana-brand hover:text-haylalana-brand-dark hover:underline font-medium">
                                             +261 34 00 000 00
                                         </a>
                                     </div>
-                                </CardContent>
-                            </Card>
 
-                            <Card>
-                                <CardContent className="p-6 flex items-start gap-4">
-                                    <div className="p-3 bg-purple-100 rounded-lg">
-                                        <MapPin className="w-6 h-6 text-purple-600" aria-hidden="true" />
+                                    <div className="flex items-center gap-3">
+                                        <div className="p-2 bg-haylalana-brand/10 rounded-lg">
+                                            <MapPin className="w-5 h-5 text-haylalana-brand" aria-hidden="true" />
+                                        </div>
+                                        <span className="text-haylalana-text-secondary font-medium">
+                                            Lot II K 45 Tsaralalana, Antananarivo
+                                        </span>
                                     </div>
-                                    <div>
-                                        <h3 className="font-semibold text-gray-900 mb-1">Adresse</h3>
-                                        <p className="text-gray-600">
-                                            Lot II K 45 Tsaralalana<br />
-                                            Antananarivo, Madagascar
-                                        </p>
-                                    </div>
-                                </CardContent>
-                            </Card>
 
-                            <Card>
-                                <CardContent className="p-6 flex items-start gap-4">
-                                    <div className="p-3 bg-orange-100 rounded-lg">
-                                        <Clock className="w-6 h-6 text-orange-600" aria-hidden="true" />
+                                    <div className="flex items-center gap-3">
+                                        <div className="p-2 bg-haylalana-accent/10 rounded-lg">
+                                            <Clock className="w-5 h-5 text-haylalana-accent" aria-hidden="true" />
+                                        </div>
+                                        <span className="text-haylalana-text-secondary font-medium">
+                                            Lun-Ven : 8h-17h | Sam : 8h-12h
+                                        </span>
                                     </div>
-                                    <div>
-                                        <h3 className="font-semibold text-gray-900 mb-1">Horaires</h3>
-                                        <p className="text-gray-600">
-                                            Lundi - Vendredi : 8h - 17h<br />
-                                            Samedi : 8h - 12h
-                                        </p>
-                                    </div>
-                                </CardContent>
-                            </Card>
-                        </div>
+                                </div>
+                            </div>
 
-                        {/* Colonne droite : Formulaire */}
-                        <div className="lg:col-span-2">
-                            <Card>
-                                <CardContent className="p-8">
-                                    <h2 className="text-2xl font-bold text-gray-900 mb-2">
-                                        Envoyez-nous un message
-                                    </h2>
-                                    <p className="text-gray-600 mb-8">
-                                        Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais
-                                    </p>
+                            {/* Colonne droite : Stats/Infos compactes */}
+                            <div className="grid grid-cols-2 gap-4">
 
-                                    <ContactForm />
-                                </CardContent>
-                            </Card>
+                                <div className="text-center p-4 bg-haylalana-brand/5 rounded-xl border border-haylalana-brand/20 hover:bg-haylalana-brand/10 transition-all">
+                                    <div className="text-3xl font-bold text-haylalana-brand mb-1">📧</div>
+                                    <div className="text-haylalana-text-tertiary text-xs">Email</div>
+                                </div>
+
+                                <div className="text-center p-4 bg-haylalana-accent/5 rounded-xl border border-haylalana-accent/20 hover:bg-haylalana-accent/10 transition-all">
+                                    <div className="text-3xl font-bold text-haylalana-accent mb-1">📞</div>
+                                    <div className="text-haylalana-text-tertiary text-xs">Téléphone</div>
+                                </div>
+
+                                <div className="text-center p-4 bg-haylalana-brand/5 rounded-xl border border-haylalana-brand/20 hover:bg-haylalana-brand/10 transition-all">
+                                    <div className="text-3xl font-bold text-haylalana-brand mb-1">📍</div>
+                                    <div className="text-haylalana-text-tertiary text-xs">Bureau</div>
+                                </div>
+
+                                <div className="text-center p-4 bg-haylalana-accent/5 rounded-xl border border-haylalana-accent/20 hover:bg-haylalana-accent/10 transition-all">
+                                    <div className="text-3xl font-bold text-haylalana-accent mb-1">⏰</div>
+                                    <div className="text-haylalana-text-tertiary text-xs">Horaires</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            {/* Section Formulaire */}
+            <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
+                <div className="container mx-auto max-w-7xl">
+
+                    {/* Titre section */}
+                    <div className="mb-12">
+                        <h2 className="text-2xl sm:text-3xl font-bold text-haylalana-heading-primary mb-6">
+                            Envoyez-nous un message
+                        </h2>
+                        <p className="text-haylalana-text-secondary max-w-2xl">
+                            Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais
+                        </p>
+                    </div>
+
+                    {/* Carte formulaire */}
+                    <Card className="border-haylalana-border-primary shadow-xl max-w-4xl">
+                        <CardContent className="p-8 sm:p-12">
+                            <ContactForm />
+                        </CardContent>
+                    </Card>
                 </div>
             </section>
         </main>

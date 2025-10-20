@@ -11,19 +11,19 @@ interface ProfessionalsGridProps {
 
 export function ProfessionalsGrid({ professionals }: ProfessionalsGridProps) {
 
-    // Couleurs par type
+    // Couleurs par type avec palette Haylalàna
     const typeColors = {
-        'Avocat': 'bg-blue-100 text-blue-700 border-blue-300',
-        'Notaire': 'bg-green-100 text-green-700 border-green-300',
-        'Huissier': 'bg-purple-100 text-purple-700 border-purple-300',
+        'Avocat': 'bg-haylalana-brand/10 text-haylalana-brand border-haylalana-brand/30',
+        'Notaire': 'bg-haylalana-success-bg text-haylalana-success border-haylalana-success/30',
+        'Huissier': 'bg-haylalana-accent/10 text-haylalana-accent border-haylalana-accent/30',
     };
 
     if (professionals.length === 0) {
         return (
             <div className="text-center py-16">
-                <MapPin className="w-16 h-16 text-gray-300 mx-auto mb-4" aria-hidden="true" />
-                <h3 className="text-xl font-semibold text-gray-700 mb-2">Aucun professionnel trouvé</h3>
-                <p className="text-gray-500">Essayez de modifier vos critères de recherche</p>
+                <MapPin className="w-16 h-16 text-haylalana-border-secondary mx-auto mb-4" aria-hidden="true" />
+                <h3 className="text-xl font-semibold text-haylalana-heading-primary mb-2">Aucun professionnel trouvé</h3>
+                <p className="text-haylalana-text-tertiary">Essayez de modifier vos critères de recherche</p>
             </div>
         );
     }
@@ -33,37 +33,38 @@ export function ProfessionalsGrid({ professionals }: ProfessionalsGridProps) {
             {professionals.map((prof) => (
                 <Card
                     key={prof.id}
-                    className="hover:shadow-xl transition-all duration-300 group border-2 hover:border-blue-400 flex flex-col"
+                    className="hover:shadow-xl transition-all duration-300 group border-2 border-haylalana-border-primary hover:border-haylalana-brand flex flex-col"
                 >
                     <CardHeader className="pb-4">
 
                         <div className="flex items-start justify-between mb-4">
 
-                            {/* Photo/Avatar */}
+                            {/* Photo/Avatar avec gradient Haylalàna */}
                             <div className="flex-shrink-0">
-                                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-700 text-white rounded-full flex items-center justify-center text-3xl group-hover:scale-110 transition-transform">
+                                <div className="w-16 h-16 bg-white/80 backdrop-blur-sm text-haylalana-brand rounded-full flex items-center justify-center text-3xl group-hover:scale-110 transition-transform border border-haylalana-border-primary shadow-lg">
                                     {prof.photo}
                                 </div>
+
                             </div>
 
                             {/* Statut disponibilité */}
                             <div className="flex items-center gap-1 text-xs">
                                 {prof.available ? (
                                     <>
-                                        <CheckCircle className="w-4 h-4 text-green-500" aria-hidden="true" />
-                                        <span className="text-green-700 font-semibold">Disponible</span>
+                                        <CheckCircle className="w-4 h-4 text-haylalana-success" aria-hidden="true" />
+                                        <span className="text-haylalana-success font-semibold">Disponible</span>
                                     </>
                                 ) : (
                                     <>
-                                        <XCircle className="w-4 h-4 text-gray-400" aria-hidden="true" />
-                                        <span className="text-gray-500 font-semibold">Non disponible</span>
+                                        <XCircle className="w-4 h-4 text-haylalana-text-muted" aria-hidden="true" />
+                                        <span className="text-haylalana-text-muted font-semibold">Non disponible</span>
                                     </>
                                 )}
                             </div>
                         </div>
 
                         {/* Nom */}
-                        <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                        <h3 className="text-xl font-bold text-haylalana-heading-primary mb-2 group-hover:text-haylalana-brand transition-colors">
                             {prof.name}
                         </h3>
 
@@ -75,7 +76,7 @@ export function ProfessionalsGrid({ professionals }: ProfessionalsGridProps) {
                             >
                                 {prof.type}
                             </Badge>
-                            <Badge variant="secondary" className="text-xs">
+                            <Badge variant="secondary" className="text-xs bg-haylalana-bg-secondary text-haylalana-text-primary border-haylalana-border-primary">
                                 <Award className="w-3 h-3 mr-1" aria-hidden="true" />
                                 {prof.experience}
                             </Badge>
@@ -85,27 +86,27 @@ export function ProfessionalsGrid({ professionals }: ProfessionalsGridProps) {
                     <CardContent className="flex-1 space-y-4">
 
                         {/* Localisation */}
-                        <div className="flex items-start gap-2 text-sm text-gray-600">
-                            <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0 text-blue-600" aria-hidden="true" />
+                        <div className="flex items-start gap-2 text-sm text-haylalana-text-secondary">
+                            <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0 text-haylalana-brand" aria-hidden="true" />
                             <div>
-                                <div className="font-semibold text-gray-900">{prof.city}</div>
+                                <div className="font-semibold text-haylalana-heading-primary">{prof.city}</div>
                                 <div className="text-xs">{prof.address}</div>
                             </div>
                         </div>
 
                         {/* Contact */}
                         <div className="space-y-2">
-                            <div className="flex items-center gap-2 text-sm text-gray-600">
-                                <Phone className="w-4 h-4 text-green-600" aria-hidden="true" />
-                                <a href={`tel:${prof.phone}`} className="hover:text-blue-600 hover:underline">
+                            <div className="flex items-center gap-2 text-sm text-haylalana-text-secondary">
+                                <Phone className="w-4 h-4 text-haylalana-success" aria-hidden="true" />
+                                <a href={`tel:${prof.phone}`} className="hover:text-haylalana-brand hover:underline">
                                     {prof.phone}
                                 </a>
                             </div>
 
                             {prof.email && (
-                                <div className="flex items-center gap-2 text-sm text-gray-600">
-                                    <Mail className="w-4 h-4 text-red-600" aria-hidden="true" />
-                                    <a href={`mailto:${prof.email}`} className="hover:text-blue-600 hover:underline truncate">
+                                <div className="flex items-center gap-2 text-sm text-haylalana-text-secondary">
+                                    <Mail className="w-4 h-4 text-haylalana-brand" aria-hidden="true" />
+                                    <a href={`mailto:${prof.email}`} className="hover:text-haylalana-brand hover:underline truncate">
                                         {prof.email}
                                     </a>
                                 </div>
@@ -114,12 +115,12 @@ export function ProfessionalsGrid({ professionals }: ProfessionalsGridProps) {
 
                         {/* Spécialités */}
                         <div>
-                            <div className="text-xs font-semibold text-gray-700 mb-2">Spécialités :</div>
+                            <div className="text-xs font-semibold text-haylalana-heading-secondary mb-2">Spécialités :</div>
                             <div className="flex flex-wrap gap-1">
                                 {prof.specialties.map((specialty) => (
                                     <span
                                         key={specialty}
-                                        className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-md border border-gray-200"
+                                        className="px-2 py-1 bg-haylalana-bg-secondary text-haylalana-text-primary text-xs rounded-md border border-haylalana-border-primary"
                                     >
                                         {specialty}
                                     </span>
@@ -128,7 +129,7 @@ export function ProfessionalsGrid({ professionals }: ProfessionalsGridProps) {
                         </div>
 
                         {/* Langues */}
-                        <div className="flex items-center gap-2 text-xs text-gray-500">
+                        <div className="flex items-center gap-2 text-xs text-haylalana-text-tertiary">
                             <Globe className="w-4 h-4" aria-hidden="true" />
                             <span>{prof.languages.join(', ')}</span>
                         </div>
@@ -136,7 +137,7 @@ export function ProfessionalsGrid({ professionals }: ProfessionalsGridProps) {
 
                     <CardFooter className="pt-4">
                         <Button
-                            className="w-full bg-blue-600 hover:bg-blue-700 font-semibold"
+                            className="w-full bg-haylalana-brand hover:bg-haylalana-brand-dark text-white font-semibold disabled:bg-haylalana-text-muted disabled:cursor-not-allowed"
                             disabled={!prof.available}
                             asChild={prof.available}
                         >

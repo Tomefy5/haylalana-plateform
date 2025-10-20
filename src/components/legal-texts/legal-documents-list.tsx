@@ -23,20 +23,20 @@ export function LegalDocumentsList({
     totalResults
 }: LegalDocumentsListProps) {
 
-    // Couleur badge selon type
+    // Couleur badge selon type avec palette Haylalàna
     const typeColors = {
-        'Loi': 'bg-blue-100 text-blue-700 border-blue-300',
-        'Décret': 'bg-green-100 text-green-700 border-green-300',
-        'Arrêté': 'bg-orange-100 text-orange-700 border-orange-300',
-        'Ordonnance': 'bg-purple-100 text-purple-700 border-purple-300',
+        'Loi': 'bg-haylalana-brand/10 text-haylalana-brand border-haylalana-brand/30',
+        'Décret': 'bg-haylalana-success-bg text-haylalana-success border-haylalana-success/30',
+        'Arrêté': 'bg-haylalana-info-bg text-haylalana-info border-haylalana-info/30',
+        'Ordonnance': 'bg-haylalana-accent/10 text-haylalana-accent border-haylalana-accent/30',
     };
 
     if (documents.length === 0) {
         return (
             <div className="text-center py-16">
-                <FileText className="w-16 h-16 text-gray-300 mx-auto mb-4" aria-hidden="true" />
-                <h3 className="text-xl font-semibold text-gray-700 mb-2">Aucun document trouvé</h3>
-                <p className="text-gray-500">Essayez de modifier vos critères de recherche</p>
+                <FileText className="w-16 h-16 text-haylalana-border-secondary mx-auto mb-4" aria-hidden="true" />
+                <h3 className="text-xl font-semibold text-haylalana-heading-primary mb-2">Aucun document trouvé</h3>
+                <p className="text-haylalana-text-tertiary">Essayez de modifier vos critères de recherche</p>
             </div>
         );
     }
@@ -49,7 +49,7 @@ export function LegalDocumentsList({
                 {documents.map((doc) => (
                     <Card
                         key={doc.id}
-                        className="hover:shadow-xl transition-all duration-300 group border-2 hover:border-blue-300"
+                        className="hover:shadow-xl transition-all duration-300 group border-2 border-haylalana-border-primary hover:border-haylalana-brand"
                     >
                         <CardHeader>
 
@@ -58,11 +58,12 @@ export function LegalDocumentsList({
                                 {/* Gauche : Icône et infos principales */}
                                 <div className="flex gap-4">
 
-                                    {/* Icône */}
+                                    {/* Icône avec gradient Haylalàna clair */}
                                     <div className="flex-shrink-0">
-                                        <div className="w-16 h-16 bg-gradient-to-br from-slate-600 to-slate-800 text-white rounded-xl flex items-center justify-center text-3xl group-hover:scale-110 transition-transform">
+                                        <div className="w-16 h-16 bg-haylalana-brand/10 text-haylalana-brand rounded-xl flex items-center justify-center text-3xl group-hover:scale-110 group-hover:bg-haylalana-brand/20 transition-all border-2 border-haylalana-brand/20">
                                             {doc.illustration}
                                         </div>
+
                                     </div>
 
                                     {/* Titre et référence */}
@@ -74,23 +75,23 @@ export function LegalDocumentsList({
                                             >
                                                 {doc.type}
                                             </Badge>
-                                            <Badge variant="secondary" className="text-xs">
+                                            <Badge variant="secondary" className="text-xs bg-haylalana-bg-secondary text-haylalana-text-primary border-haylalana-border-primary">
                                                 {doc.category}
                                             </Badge>
                                         </div>
 
-                                        <h3 className="text-xl font-bold text-gray-900 mb-1 group-hover:text-blue-600 transition-colors">
+                                        <h3 className="text-xl font-bold text-haylalana-heading-primary mb-1 group-hover:text-haylalana-brand transition-colors">
                                             {doc.title}
                                         </h3>
 
-                                        <p className="text-sm text-gray-500 font-mono">
+                                        <p className="text-sm text-haylalana-text-tertiary font-mono">
                                             {doc.reference}
                                         </p>
                                     </div>
                                 </div>
 
                                 {/* Droite : Métadonnées */}
-                                <div className="flex md:flex-col gap-4 md:gap-2 text-sm text-gray-500 md:items-end">
+                                <div className="flex md:flex-col gap-4 md:gap-2 text-sm text-haylalana-text-tertiary md:items-end">
                                     <div className="flex items-center gap-1">
                                         <Calendar className="w-4 h-4" aria-hidden="true" />
                                         <span>{doc.publicationDate}</span>
@@ -106,7 +107,7 @@ export function LegalDocumentsList({
                         <CardContent>
 
                             {/* Résumé */}
-                            <p className="text-gray-600 leading-relaxed mb-4">
+                            <p className="text-haylalana-text-secondary leading-relaxed mb-4">
                                 {doc.summary}
                             </p>
 
@@ -115,7 +116,7 @@ export function LegalDocumentsList({
                                 {doc.tags.map((tag) => (
                                     <span
                                         key={tag}
-                                        className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-md border border-gray-200"
+                                        className="px-2 py-1 bg-haylalana-bg-secondary text-haylalana-text-primary text-xs rounded-md border border-haylalana-border-primary"
                                     >
                                         {tag}
                                     </span>
@@ -128,7 +129,7 @@ export function LegalDocumentsList({
                             {/* Bouton consulter */}
                             <Button
                                 asChild
-                                className="flex-1 bg-blue-600 hover:bg-blue-700 font-semibold"
+                                className="flex-1 bg-haylalana-brand hover:bg-haylalana-brand-dark text-white font-semibold"
                             >
                                 <Link href={`/textes-juridiques/${doc.id}`}>
                                     <Eye className="w-4 h-4 mr-2" aria-hidden="true" />
@@ -139,7 +140,7 @@ export function LegalDocumentsList({
                             {/* Bouton télécharger */}
                             <Button
                                 variant="outline"
-                                className="flex-1 sm:flex-initial border-2 hover:bg-gray-100 font-semibold"
+                                className="flex-1 sm:flex-initial border-2 border-haylalana-brand text-haylalana-brand hover:bg-haylalana-brand hover:text-white font-semibold"
                                 onClick={() => {
                                     // Logique de téléchargement
                                     console.log(`Téléchargement du document ${doc.id}`);
@@ -155,10 +156,10 @@ export function LegalDocumentsList({
 
             {/* Pagination */}
             {totalPages > 1 && (
-                <div className="flex flex-col items-center gap-4 pt-8 border-t">
+                <div className="flex flex-col items-center gap-4 pt-8 border-t border-haylalana-border-primary">
 
-                    <p className="text-sm text-gray-600">
-                        Page <span className="font-semibold">{currentPage}</span> sur <span className="font-semibold">{totalPages}</span>
+                    <p className="text-sm text-haylalana-text-secondary">
+                        Page <span className="font-semibold text-haylalana-heading-primary">{currentPage}</span> sur <span className="font-semibold text-haylalana-heading-primary">{totalPages}</span>
                     </p>
 
                     <Pagination>
@@ -168,7 +169,7 @@ export function LegalDocumentsList({
                             <PaginationItem>
                                 <PaginationPrevious
                                     onClick={() => onPageChange(Math.max(1, currentPage - 1))}
-                                    className={currentPage === 1 ? 'pointer-events-none opacity-50' : 'cursor-pointer'}
+                                    className={`${currentPage === 1 ? 'pointer-events-none opacity-50' : 'cursor-pointer hover:bg-haylalana-brand/5 hover:text-haylalana-brand'}`}
                                 />
                             </PaginationItem>
 
@@ -185,7 +186,10 @@ export function LegalDocumentsList({
                                             <PaginationLink
                                                 onClick={() => onPageChange(page)}
                                                 isActive={currentPage === page}
-                                                className="cursor-pointer"
+                                                className={`cursor-pointer ${currentPage === page
+                                                    ? 'bg-haylalana-brand text-white hover:bg-haylalana-brand-dark'
+                                                    : 'hover:bg-haylalana-brand/5 hover:text-haylalana-brand'
+                                                    }`}
                                             >
                                                 {page}
                                             </PaginationLink>
@@ -197,7 +201,7 @@ export function LegalDocumentsList({
                                 if (page === currentPage - 2 || page === currentPage + 2) {
                                     return (
                                         <PaginationItem key={page}>
-                                            <span className="px-3 py-2">...</span>
+                                            <span className="px-3 py-2 text-haylalana-text-tertiary">...</span>
                                         </PaginationItem>
                                     );
                                 }
@@ -209,7 +213,7 @@ export function LegalDocumentsList({
                             <PaginationItem>
                                 <PaginationNext
                                     onClick={() => onPageChange(Math.min(totalPages, currentPage + 1))}
-                                    className={currentPage === totalPages ? 'pointer-events-none opacity-50' : 'cursor-pointer'}
+                                    className={`${currentPage === totalPages ? 'pointer-events-none opacity-50' : 'cursor-pointer hover:bg-haylalana-brand/5 hover:text-haylalana-brand'}`}
                                 />
                             </PaginationItem>
                         </PaginationContent>

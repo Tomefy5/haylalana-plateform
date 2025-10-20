@@ -5,7 +5,7 @@ import { useState, useMemo } from 'react';
 import { SearchFilters } from '@/components/legal-texts/search-filters';
 import { LegalDocumentsList } from '@/components/legal-texts/legal-documents-list';
 import { mockLegalDocuments } from '@/lib/mock-data-legal-texts';
-import { Scale, FileText, Download } from 'lucide-react';
+import { Scale, FileText, Download, BookOpen } from 'lucide-react';
 
 const ITEMS_PER_PAGE = 6;
 
@@ -35,6 +35,10 @@ export default function TextesJuridiquesPage() {
     const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
     const paginatedDocuments = filteredDocuments.slice(startIndex, startIndex + ITEMS_PER_PAGE);
 
+    // Compter les types
+    const documentTypes = ['Loi', 'Décret', 'Arrêté', 'Ordonnance'];
+    const typeCount = (type: string) => mockLegalDocuments.filter(doc => doc.type === type).length;
+
     // Réinitialiser la page quand les filtres changent
     const handleFiltersChange = (search: string, type: string, category: string) => {
         setSearchQuery(search);
@@ -44,47 +48,70 @@ export default function TextesJuridiquesPage() {
     };
 
     return (
-        <main className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+        <main className="min-h-screen bg-gradient-to-br from-haylalana-bg-primary via-haylalana-brand/3 to-haylalana-bg-primary">
 
-            {/* Hero Section */}
-            <section className="bg-gradient-to-r from-slate-800 via-slate-700 to-slate-800 text-white py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
+            {/* Hero Section avec grande carte blanche */}
+            <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
                 <div className="container mx-auto max-w-7xl">
 
-                    <div className="max-w-4xl mx-auto text-center">
+                    {/* Grande carte blanche centrale */}
+                    <div className="bg-white rounded-3xl shadow-2xl border border-haylalana-border-primary p-8 sm:p-12">
 
-                        {/* Badge */}
-                        <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20">
-                            <Scale className="w-4 h-4" aria-hidden="true" />
-                            <span className="text-sm font-semibold">Bibliothèque juridique</span>
-                        </div>
+                        <div className="grid lg:grid-cols-2 gap-12 items-center">
 
-                        {/* Titre */}
-                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                            Textes juridiques de{' '}
-                            <span className="text-blue-400">Madagascar</span>
-                        </h1>
+                            {/* Contenu gauche */}
+                            <div>
+                                {/* Badge */}
+                                <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full bg-haylalana-brand/10 border-2 border-haylalana-brand/30">
+                                    <Scale className="w-4 h-4 text-haylalana-brand" aria-hidden="true" />
+                                    <span className="text-sm font-semibold text-haylalana-brand">Bibliothèque juridique</span>
+                                </div>
 
-                        {/* Description */}
-                        <p className="text-lg sm:text-xl text-gray-300 mb-8 leading-relaxed">
-                            Consultez et téléchargez les lois, décrets, arrêtés et ordonnances
-                            qui régissent vos droits et obligations à Madagascar
-                        </p>
+                                {/* Titre */}
+                                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 leading-tight text-haylalana-heading-primary">
+                                    Textes juridiques de{' '}
+                                    <span className="text-haylalana-brand">Madagascar</span>
+                                </h1>
 
-                        {/* Stats */}
-                        <div className="flex flex-wrap gap-8 justify-center text-sm sm:text-base">
-                            <div className="flex items-center gap-2">
-                                <FileText className="w-5 h-5 text-blue-400" aria-hidden="true" />
-                                <div>
-                                    <span className="font-bold text-2xl">{mockLegalDocuments.length}</span>
-                                    <span className="text-gray-300 ml-2">Textes disponibles</span>
+                                {/* Description */}
+                                <p className="text-lg text-haylalana-text-secondary mb-8 leading-relaxed">
+                                    Consultez et téléchargez les lois, décrets, arrêtés et ordonnances
+                                    qui régissent vos droits et obligations à Madagascar
+                                </p>
+
+                                {/* CTA */}
+                                <div className="flex flex-col sm:flex-row gap-4">
+                                    <button
+                                        onClick={() => document.getElementById('search-section')?.scrollIntoView({ behavior: 'smooth' })}
+                                        className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-haylalana-brand hover:bg-haylalana-brand-dark text-white font-semibold rounded-lg shadow-lg hover:scale-105 transition-all"
+                                    >
+                                        <BookOpen className="w-5 h-5" aria-hidden="true" />
+                                        Consulter les textes
+                                    </button>
                                 </div>
                             </div>
 
-                            <div className="flex items-center gap-2">
-                                <Download className="w-5 h-5 text-green-400" aria-hidden="true" />
-                                <div>
-                                    <span className="font-bold text-2xl">PDF</span>
-                                    <span className="text-gray-300 ml-2">Téléchargeables</span>
+                            {/* Stats compactes */}
+                            <div className="grid grid-cols-2 gap-4">
+
+                                <div className="text-center p-4 bg-haylalana-brand/5 rounded-xl border border-haylalana-brand/20 hover:bg-haylalana-brand/10 transition-all">
+                                    <div className="text-3xl font-bold text-haylalana-brand mb-1">{mockLegalDocuments.length}</div>
+                                    <div className="text-haylalana-text-tertiary text-xs">Textes</div>
+                                </div>
+
+                                <div className="text-center p-4 bg-haylalana-brand/5 rounded-xl border border-haylalana-brand/20 hover:bg-haylalana-brand/10 transition-all">
+                                    <div className="text-3xl font-bold text-haylalana-brand mb-1">4</div>
+                                    <div className="text-haylalana-text-tertiary text-xs">Types</div>
+                                </div>
+
+                                <div className="text-center p-4 bg-haylalana-brand/5 rounded-xl border border-haylalana-brand/20 hover:bg-haylalana-brand/10 transition-all">
+                                    <div className="text-3xl font-bold text-haylalana-brand mb-1">PDF</div>
+                                    <div className="text-haylalana-text-tertiary text-xs">Format</div>
+                                </div>
+
+                                <div className="text-center p-4 bg-haylalana-brand/5 rounded-xl border border-haylalana-brand/20 hover:bg-haylalana-brand/10 transition-all">
+                                    <div className="text-3xl font-bold text-haylalana-brand mb-1">100%</div>
+                                    <div className="text-haylalana-text-tertiary text-xs">Gratuit</div>
                                 </div>
                             </div>
                         </div>
@@ -93,12 +120,26 @@ export default function TextesJuridiquesPage() {
             </section>
 
             {/* Section Recherche et Filtres */}
-            <section className="py-8 px-4 sm:px-6 lg:px-8 bg-white border-b sticky top-0 z-10 shadow-sm">
+            <section id="search-section" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
                 <div className="container mx-auto max-w-7xl">
-                    <SearchFilters
-                        onFiltersChange={handleFiltersChange}
-                        resultsCount={filteredDocuments.length}
-                    />
+
+                    {/* Titre section */}
+                    <div className="mb-8">
+                        <h2 className="text-2xl sm:text-3xl font-bold text-haylalana-heading-primary mb-2">
+                            Rechercher un texte
+                        </h2>
+                        <p className="text-haylalana-text-secondary">
+                            Utilisez les filtres ci-dessous pour trouver rapidement les documents juridiques
+                        </p>
+                    </div>
+
+                    {/* Filtres dans une carte */}
+                    <div className="bg-white rounded-2xl border border-haylalana-border-primary shadow-sm p-6">
+                        <SearchFilters
+                            onFiltersChange={handleFiltersChange}
+                            resultsCount={filteredDocuments.length}
+                        />
+                    </div>
                 </div>
             </section>
 
@@ -106,6 +147,14 @@ export default function TextesJuridiquesPage() {
             <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
                 <div className="container mx-auto max-w-7xl">
 
+                    {/* Compteur de résultats */}
+                    <div className="mb-8 p-4 bg-white rounded-xl border border-haylalana-border-primary shadow-sm">
+                        <p className="text-haylalana-text-secondary">
+                            <span className="font-semibold text-haylalana-heading-primary">{filteredDocuments.length}</span> document{filteredDocuments.length > 1 ? 's' : ''} trouvé{filteredDocuments.length > 1 ? 's' : ''}
+                        </p>
+                    </div>
+
+                    {/* Liste des documents */}
                     <LegalDocumentsList
                         documents={paginatedDocuments}
                         currentPage={currentPage}

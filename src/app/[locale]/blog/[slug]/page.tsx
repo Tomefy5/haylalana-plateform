@@ -23,9 +23,13 @@ export default function ArticlePage({ params }: ArticlePageProps) {
         <main className="min-h-screen bg-white">
 
             {/* Bouton retour */}
-            <div className="bg-gray-50 border-b">
+            <div className="bg-gray-50 border-b border-gray-200">
                 <div className="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-4">
-                    <Button variant="ghost" asChild>
+                    <Button
+                        variant="ghost"
+                        asChild
+                        className="text-red-700 hover:text-red-800 hover:bg-red-50"
+                    >
                         <Link href="/blog">
                             <ArrowLeft className="w-4 h-4 mr-2" aria-hidden="true" />
                             Retour aux articles
@@ -42,7 +46,9 @@ export default function ArticlePage({ params }: ArticlePageProps) {
                     <header className="mb-12">
 
                         {/* Catégorie */}
-                        <Badge className="mb-4">{post.category}</Badge>
+                        <Badge className="mb-4 bg-red-700 text-white">
+                            {post.category}
+                        </Badge>
 
                         {/* Titre */}
                         <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6 leading-tight">
@@ -52,27 +58,30 @@ export default function ArticlePage({ params }: ArticlePageProps) {
                         {/* Métadonnées */}
                         <div className="flex flex-wrap gap-6 text-gray-600 mb-8">
                             <div className="flex items-center gap-2">
-                                <User className="w-5 h-5" aria-hidden="true" />
+                                <User className="w-5 h-5 text-red-700" aria-hidden="true" />
                                 <span>{post.author}</span>
                             </div>
                             <div className="flex items-center gap-2">
-                                <Calendar className="w-5 h-5" aria-hidden="true" />
+                                <Calendar className="w-5 h-5 text-red-700" aria-hidden="true" />
                                 <span>{post.publishedDate}</span>
                             </div>
                             <div className="flex items-center gap-2">
-                                <Clock className="w-5 h-5" aria-hidden="true" />
+                                <Clock className="w-5 h-5 text-red-700" aria-hidden="true" />
                                 <span>{post.readTime} de lecture</span>
                             </div>
                         </div>
 
                         {/* Image de couverture */}
-                        <div className="w-full h-96 bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl flex items-center justify-center text-9xl mb-8">
+                        <div className="w-full h-96 bg-gradient-to-br from-haylalana-brand-light to-haylalana-brand rounded-2xl flex items-center justify-center text-9xl mb-8">
                             {post.coverImage}
                         </div>
 
                         {/* Bouton partage */}
                         <div className="flex justify-end">
-                            <Button variant="outline">
+                            <Button
+                                variant="outline"
+                                className="border-red-700 text-red-700 hover:bg-red-50"
+                            >
                                 <Share2 className="w-4 h-4 mr-2" aria-hidden="true" />
                                 Partager
                             </Button>
@@ -80,15 +89,19 @@ export default function ArticlePage({ params }: ArticlePageProps) {
                     </header>
 
                     {/* Contenu */}
-                    <div className="prose prose-lg prose-blue max-w-none">
+                    <div className="prose prose-lg max-w-none mb-12">
                         <div dangerouslySetInnerHTML={{ __html: post.content.replace(/\n/g, '<br/>') }} />
                     </div>
 
                     {/* Tags */}
-                    <footer className="mt-12 pt-8 border-t">
+                    <footer className="pt-8 border-t border-gray-200">
                         <div className="flex flex-wrap gap-2">
                             {post.tags.map((tag) => (
-                                <Badge key={tag} variant="secondary">
+                                <Badge
+                                    key={tag}
+                                    variant="secondary"
+                                    className="bg-gray-100 text-gray-700"
+                                >
                                     {tag}
                                 </Badge>
                             ))}
