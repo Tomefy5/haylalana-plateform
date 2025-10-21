@@ -1,5 +1,6 @@
 // src/components/home/hero-section.tsx
 import Link from 'next/link';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Users, BookOpen, Sparkles } from 'lucide-react';
 
@@ -13,6 +14,31 @@ export function HeroSection() {
 
       {/* Contenu principal */}
       <div className="relative z-10 container mx-auto px-6 sm:px-8 lg:px-12 py-16 text-center">
+
+        {/* Logo Haylalàna dans un cercle décoratif */}
+        <div className="flex justify-center mb-8">
+          <div className="relative group">
+            {/* Cercle extérieur animé */}
+            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-haylalana-brand/20 to-haylalana-accent/20 blur-2xl group-hover:blur-3xl transition-all duration-500 animate-pulse" aria-hidden="true" />
+
+            {/* Cercle principal avec logo */}
+            <div className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 rounded-full bg-gradient-to-br from-white to-haylalana-bg-secondary border-4 border-haylalana-brand/30 shadow-2xl flex items-center justify-center group-hover:scale-105 transition-transform duration-500 animate-fade-in">
+              <Image
+                src="/icons/haylalana-icon-ss-bg.png"
+                alt="Logo Haylalàna"
+                width={180}
+                height={180}
+                className="object-contain p-4"
+                priority
+              />
+            </div>
+
+            {/* Éléments décoratifs autour du cercle */}
+            <div className="absolute -top-2 -right-2 w-16 h-16 rounded-full bg-haylalana-brand/10 border-2 border-haylalana-brand/30 animate-bounce" aria-hidden="true" style={{ animationDelay: '0.5s', animationDuration: '3s' }} />
+            <div className="absolute -bottom-3 -left-3 w-20 h-20 rounded-full bg-haylalana-accent/10 border-2 border-haylalana-accent/30 animate-bounce" aria-hidden="true" style={{ animationDelay: '1s', animationDuration: '3.5s' }} />
+          </div>
+        </div>
+
 
         {/* Badge bordeaux solide */}
         <div className="inline-flex items-center gap-2 mb-10 px-5 py-3 rounded-full bg-haylalana-brand text-white shadow-lg">
@@ -103,5 +129,3 @@ export function HeroSection() {
     </header>
   );
 }
-
-

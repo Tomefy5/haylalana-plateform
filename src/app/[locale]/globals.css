@@ -4,425 +4,445 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
+   --radius-sm: calc(var(--radius) - 4px);
+   --radius-md: calc(var(--radius) - 2px);
+   --radius-lg: var(--radius);
+   --radius-xl: calc(var(--radius) + 4px);
 
-  /* Couleurs shadcn/ui existantes */
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
+   /* Couleurs shadcn/ui existantes */
+   --color-background: var(--background);
+   --color-foreground: var(--foreground);
+   --color-card: var(--card);
+   --color-card-foreground: var(--card-foreground);
+   --color-popover: var(--popover);
+   --color-popover-foreground: var(--popover-foreground);
+   --color-primary: var(--primary);
+   --color-primary-foreground: var(--primary-foreground);
+   --color-secondary: var(--secondary);
+   --color-secondary-foreground: var(--secondary-foreground);
+   --color-muted: var(--muted);
+   --color-muted-foreground: var(--muted-foreground);
+   --color-accent: var(--accent);
+   --color-accent-foreground: var(--accent-foreground);
+   --color-destructive: var(--destructive);
+   --color-border: var(--border);
+   --color-input: var(--input);
+   --color-ring: var(--ring);
+   --color-chart-1: var(--chart-1);
+   --color-chart-2: var(--chart-2);
+   --color-chart-3: var(--chart-3);
+   --color-chart-4: var(--chart-4);
+   --color-chart-5: var(--chart-5);
+   --color-sidebar: var(--sidebar);
+   --color-sidebar-foreground: var(--sidebar-foreground);
+   --color-sidebar-primary: var(--sidebar-primary);
+   --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+   --color-sidebar-accent: var(--sidebar-accent);
+   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+   --color-sidebar-border: var(--sidebar-border);
+   --color-sidebar-ring: var(--sidebar-ring);
 
-  /* Enregistrer les couleurs Haylalàna pour Tailwind */
-  /* Arrière-plans */
-  --color-haylalana-bg-primary: var(--haylalana-bg-primary);
-  --color-haylalana-bg-secondary: var(--haylalana-bg-secondary);
-  --color-haylalana-bg-tertiary: var(--haylalana-bg-tertiary);
-  --color-haylalana-bg-dark: var(--haylalana-bg-dark);
+   /* Enregistrer les couleurs Haylalàna pour Tailwind */
+   /* Arrière-plans */
+   --color-haylalana-bg-primary: var(--haylalana-bg-primary);
+   --color-haylalana-bg-secondary: var(--haylalana-bg-secondary);
+   --color-haylalana-bg-tertiary: var(--haylalana-bg-tertiary);
+   --color-haylalana-bg-dark: var(--haylalana-bg-dark);
 
-  /* Textes */
-  --color-haylalana-text-primary: var(--haylalana-text-primary);
-  --color-haylalana-text-secondary: var(--haylalana-text-secondary);
-  --color-haylalana-text-tertiary: var(--haylalana-text-tertiary);
-  --color-haylalana-text-muted: var(--haylalana-text-muted);
-  --color-haylalana-text-inverse: var(--haylalana-text-inverse);
+   /* Textes */
+   --color-haylalana-text-primary: var(--haylalana-text-primary);
+   --color-haylalana-text-secondary: var(--haylalana-text-secondary);
+   --color-haylalana-text-tertiary: var(--haylalana-text-tertiary);
+   --color-haylalana-text-muted: var(--haylalana-text-muted);
+   --color-haylalana-text-inverse: var(--haylalana-text-inverse);
 
-  /* Titres */
-  --color-haylalana-heading-primary: var(--haylalana-heading-primary);
-  --color-haylalana-heading-secondary: var(--haylalana-heading-secondary);
-  --color-haylalana-heading-accent: var(--haylalana-heading-accent);
+   /* Titres */
+   --color-haylalana-heading-primary: var(--haylalana-heading-primary);
+   --color-haylalana-heading-secondary: var(--haylalana-heading-secondary);
+   --color-haylalana-heading-accent: var(--haylalana-heading-accent);
 
-  /* Marque (Bordeaux) */
-  --color-haylalana-brand: var(--haylalana-brand);
-  --color-haylalana-brand-light: var(--haylalana-brand-light);
-  --color-haylalana-brand-dark: var(--haylalana-brand-dark);
+   /* Marque (Bordeaux) */
+   --color-haylalana-brand: var(--haylalana-brand);
+   --color-haylalana-brand-light: var(--haylalana-brand-light);
+   --color-haylalana-brand-dark: var(--haylalana-brand-dark);
 
-  /* Accent (Rose) */
-  --color-haylalana-accent: var(--haylalana-accent);
-  --color-haylalana-accent-light: var(--haylalana-accent-light);
-  --color-haylalana-accent-dark: var(--haylalana-accent-dark);
+   /* Accent (Rose) */
+   --color-haylalana-accent: var(--haylalana-accent);
+   --color-haylalana-accent-light: var(--haylalana-accent-light);
+   --color-haylalana-accent-dark: var(--haylalana-accent-dark);
 
-  /* Bordures */
-  --color-haylalana-border-primary: var(--haylalana-border-primary);
-  --color-haylalana-border-secondary: var(--haylalana-border-secondary);
-  --color-haylalana-border-focus: var(--haylalana-border-focus);
+   /* Bordures */
+   --color-haylalana-border-primary: var(--haylalana-border-primary);
+   --color-haylalana-border-secondary: var(--haylalana-border-secondary);
+   --color-haylalana-border-focus: var(--haylalana-border-focus);
 
-  /* États */
-  --color-haylalana-success: var(--haylalana-success);
-  --color-haylalana-success-bg: var(--haylalana-success-bg);
-  --color-haylalana-error: var(--haylalana-error);
-  --color-haylalana-error-bg: var(--haylalana-error-bg);
-  --color-haylalana-warning: var(--haylalana-warning);
-  --color-haylalana-warning-bg: var(--haylalana-warning-bg);
-  --color-haylalana-info: var(--haylalana-info);
-  --color-haylalana-info-bg: var(--haylalana-info-bg);
+   /* États */
+   --color-haylalana-success: var(--haylalana-success);
+   --color-haylalana-success-bg: var(--haylalana-success-bg);
+   --color-haylalana-error: var(--haylalana-error);
+   --color-haylalana-error-bg: var(--haylalana-error-bg);
+   --color-haylalana-warning: var(--haylalana-warning);
+   --color-haylalana-warning-bg: var(--haylalana-warning-bg);
+   --color-haylalana-info: var(--haylalana-info);
+   --color-haylalana-info-bg: var(--haylalana-info-bg);
 }
 
 /* ========================================
    MODE CLAIR - PALETTE HAYLALÀNA
    ======================================== */
 :root {
-  --radius: 0.625rem;
+   --radius: 0.625rem;
 
-  /* Couleurs shadcn/ui existantes */
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+   /* Couleurs shadcn/ui existantes */
+   --background: oklch(1 0 0);
+   --foreground: oklch(0.145 0 0);
+   --card: oklch(1 0 0);
+   --card-foreground: oklch(0.145 0 0);
+   --popover: oklch(1 0 0);
+   --popover-foreground: oklch(0.145 0 0);
+   --primary: oklch(0.205 0 0);
+   --primary-foreground: oklch(0.985 0 0);
+   --secondary: oklch(0.97 0 0);
+   --secondary-foreground: oklch(0.205 0 0);
+   --muted: oklch(0.97 0 0);
+   --muted-foreground: oklch(0.556 0 0);
+   --accent: oklch(0.97 0 0);
+   --accent-foreground: oklch(0.205 0 0);
+   --destructive: oklch(0.577 0.245 27.325);
+   --border: oklch(0.922 0 0);
+   --input: oklch(0.922 0 0);
+   --ring: oklch(0.708 0 0);
+   --chart-1: oklch(0.646 0.222 41.116);
+   --chart-2: oklch(0.6 0.118 184.704);
+   --chart-3: oklch(0.398 0.07 227.392);
+   --chart-4: oklch(0.828 0.189 84.429);
+   --chart-5: oklch(0.769 0.188 70.08);
+   --sidebar: oklch(0.985 0 0);
+   --sidebar-foreground: oklch(0.145 0 0);
+   --sidebar-primary: oklch(0.205 0 0);
+   --sidebar-primary-foreground: oklch(0.985 0 0);
+   --sidebar-accent: oklch(0.97 0 0);
+   --sidebar-accent-foreground: oklch(0.205 0 0);
+   --sidebar-border: oklch(0.922 0 0);
+   --sidebar-ring: oklch(0.708 0 0);
 
-  /* ========================================
+   /* ========================================
      ARRIÈRE-PLANS
      ======================================== */
-  --haylalana-bg-primary: #FFFFFF;
-  /* BG Primary */
-  --haylalana-bg-secondary: #F5F5F5;
-  /* BG Secondary */
-  --haylalana-bg-tertiary: #E5E5E5;
-  /* BG Tertiary */
-  --haylalana-bg-dark: #0F172A;
-  /* BG Dark (pour sections contrastées) */
+   --haylalana-bg-primary: #FFFFFF;
+   /* BG Primary */
+   --haylalana-bg-secondary: #F5F5F5;
+   /* BG Secondary */
+   --haylalana-bg-tertiary: #E5E5E5;
+   /* BG Tertiary */
+   --haylalana-bg-dark: #0F172A;
+   /* BG Dark (pour sections contrastées) */
 
-  /* ========================================
+   /* ========================================
      TEXTES
      ======================================== */
-  --haylalana-text-primary: #212325;
-  /* Text Primary (noir) */
-  --haylalana-text-secondary: #282B30;
-  /* Text Secondary */
-  --haylalana-text-tertiary: #A8A8AF;
-  /* Text Tertiary (gris) */
-  --haylalana-text-muted: #C6BABD;
-  /* Text Muted */
-  --haylalana-text-inverse: #F8F8F8;
-  /* Text Inverse (blanc sur fond sombre) */
+   --haylalana-text-primary: #212325;
+   /* Text Primary (noir) */
+   --haylalana-text-secondary: #282B30;
+   /* Text Secondary */
+   --haylalana-text-tertiary: #A8A8AF;
+   /* Text Tertiary (gris) */
+   --haylalana-text-muted: #C6BABD;
+   /* Text Muted */
+   --haylalana-text-inverse: #F8F8F8;
+   /* Text Inverse (blanc sur fond sombre) */
 
-  /* ========================================
+   /* ========================================
      TITRES
      ======================================== */
-  --haylalana-heading-primary: #212325;
-  /* Heading Primary (noir) */
-  --haylalana-heading-secondary: #50606B;
-  /* Heading Secondary */
-  --haylalana-heading-accent: #850724;
-  /* Heading Accent (bordeaux) */
+   --haylalana-heading-primary: #212325;
+   /* Heading Primary (noir) */
+   --haylalana-heading-secondary: #50606B;
+   /* Heading Secondary */
+   --haylalana-heading-accent: #850724;
+   /* Heading Accent (bordeaux) */
 
-  /* ========================================
+   /* ========================================
      MARQUE (BORDEAUX)
      ======================================== */
-  --haylalana-brand: #850724;
-  /* Brand (Bordeaux principal) */
-  --haylalana-brand-light: #BD1938;
-  /* Brand Light */
-  --haylalana-brand-dark: #680519;
-  /* Brand Dark */
+   --haylalana-brand: #850724;
+   /* Brand (Bordeaux principal) */
+   --haylalana-brand-light: #BD1938;
+   /* Brand Light */
+   --haylalana-brand-dark: #680519;
+   /* Brand Dark */
 
-  /* ========================================
+   /* ========================================
      ACCENT (ROSE)
      ======================================== */
-  --haylalana-accent: #B8106D;
-  /* Accent (Rose principal) */
-  --haylalana-accent-light: #E72F8B;
-  /* Accent Light */
-  --haylalana-accent-dark: #AD1071;
-  /* Accent Dark */
+   --haylalana-accent: #B8106D;
+   /* Accent (Rose principal) */
+   --haylalana-accent-light: #E72F8B;
+   /* Accent Light */
+   --haylalana-accent-dark: #AD1071;
+   /* Accent Dark */
 
-  /* ========================================
+   /* ========================================
      BORDURES
      ======================================== */
-  --haylalana-border-primary: #E0E0E0;
-  /* Border Primary */
-  --haylalana-border-secondary: #A8A8AF;
-  /* Border Secondary */
-  --haylalana-border-focus: #850724;
-  /* Border Focus (bordeaux) */
+   --haylalana-border-primary: #E0E0E0;
+   /* Border Primary */
+   --haylalana-border-secondary: #A8A8AF;
+   /* Border Secondary */
+   --haylalana-border-focus: #850724;
+   /* Border Focus (bordeaux) */
 
-  /* ========================================
+   /* ========================================
      ÉTATS - SUCCÈS
      ======================================== */
-  --haylalana-success: #069D61;
-  /* Success (vert) */
-  --haylalana-success-bg: #F1CDE5;
-  /* Success BG */
+   --haylalana-success: #069D61;
+   /* Success (vert) */
+   --haylalana-success-bg: #F1CDE5;
+   /* Success BG */
 
-  /* ========================================
+   /* ========================================
      ÉTATS - ERREUR
      ======================================== */
-  --haylalana-error: #DC2A2F;
-  /* Error (rouge) */
-  --haylalana-error-bg: #F1CFCF;
-  /* Error BG */
+   --haylalana-error: #DC2A2F;
+   /* Error (rouge) */
+   --haylalana-error-bg: #F1CFCF;
+   /* Error BG */
 
-  /* ========================================
+   /* ========================================
      ÉTATS - AVERTISSEMENT
      ======================================== */
-  --haylalana-warning: #F59E0B;
-  /* Warning (orange) */
-  --haylalana-warning-bg: #FFF1BB;
-  /* Warning BG */
+   --haylalana-warning: #F59E0B;
+   /* Warning (orange) */
+   --haylalana-warning-bg: #FFF1BB;
+   /* Warning BG */
 
-  /* ========================================
+   /* ========================================
      ÉTATS - INFO
      ======================================== */
-  --haylalana-info: #0273F6;
-  /* Info (bleu) */
-  --haylalana-info-bg: #F2D2F4;
-  /* Info BG */
+   --haylalana-info: #0273F6;
+   /* Info (bleu) */
+   --haylalana-info-bg: #F2D2F4;
+   /* Info BG */
 }
 
 /* ========================================
    MODE SOMBRE - PALETTE HAYLALÀNA
    ======================================== */
 .dark {
-  /* Couleurs shadcn/ui mode sombre */
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+   /* Couleurs shadcn/ui mode sombre */
+   --background: oklch(0.145 0 0);
+   --foreground: oklch(0.985 0 0);
+   --card: oklch(0.205 0 0);
+   --card-foreground: oklch(0.985 0 0);
+   --popover: oklch(0.205 0 0);
+   --popover-foreground: oklch(0.985 0 0);
+   --primary: oklch(0.922 0 0);
+   --primary-foreground: oklch(0.205 0 0);
+   --secondary: oklch(0.269 0 0);
+   --secondary-foreground: oklch(0.985 0 0);
+   --muted: oklch(0.269 0 0);
+   --muted-foreground: oklch(0.708 0 0);
+   --accent: oklch(0.269 0 0);
+   --accent-foreground: oklch(0.985 0 0);
+   --destructive: oklch(0.704 0.191 22.216);
+   --border: oklch(1 0 0 / 10%);
+   --input: oklch(1 0 0 / 15%);
+   --ring: oklch(0.556 0 0);
+   --chart-1: oklch(0.488 0.243 264.376);
+   --chart-2: oklch(0.696 0.17 162.48);
+   --chart-3: oklch(0.769 0.188 70.08);
+   --chart-4: oklch(0.627 0.265 303.9);
+   --chart-5: oklch(0.645 0.246 16.439);
+   --sidebar: oklch(0.205 0 0);
+   --sidebar-foreground: oklch(0.985 0 0);
+   --sidebar-primary: oklch(0.488 0.243 264.376);
+   --sidebar-primary-foreground: oklch(0.985 0 0);
+   --sidebar-accent: oklch(0.269 0 0);
+   --sidebar-accent-foreground: oklch(0.985 0 0);
+   --sidebar-border: oklch(1 0 0 / 10%);
+   --sidebar-ring: oklch(0.556 0 0);
 
-  /* ========================================
+   /* ========================================
      ARRIÈRE-PLANS (MODE SOMBRE)
      ======================================== */
-  --haylalana-bg-primary: #1A1B1D;
-  /* BG Primary (noir) */
-  --haylalana-bg-secondary: #22232B;
-  /* BG Secondary */
-  --haylalana-bg-tertiary: #31353B;
-  /* BG Tertiary */
-  --haylalana-bg-dark: #0F1011;
-  /* BG Dark (noir profond) */
+   --haylalana-bg-primary: #1A1B1D;
+   /* BG Primary (noir) */
+   --haylalana-bg-secondary: #22232B;
+   /* BG Secondary */
+   --haylalana-bg-tertiary: #31353B;
+   /* BG Tertiary */
+   --haylalana-bg-dark: #0F1011;
+   /* BG Dark (noir profond) */
 
-  /* ========================================
+   /* ========================================
      TEXTES (MODE SOMBRE)
      ======================================== */
-  --haylalana-text-primary: #F8F8F8;
-  /* Text Primary (blanc) */
-  --haylalana-text-secondary: #B1BACA;
-  /* Text Secondary */
-  --haylalana-text-tertiary: #98969F;
-  /* Text Tertiary */
-  --haylalana-text-muted: #A1A2AB;
-  /* Text Muted */
-  --haylalana-text-inverse: #212325;
-  /* Text Inverse (noir sur fond clair) */
+   --haylalana-text-primary: #F8F8F8;
+   /* Text Primary (blanc) */
+   --haylalana-text-secondary: #B1BACA;
+   /* Text Secondary */
+   --haylalana-text-tertiary: #98969F;
+   /* Text Tertiary */
+   --haylalana-text-muted: #A1A2AB;
+   /* Text Muted */
+   --haylalana-text-inverse: #212325;
+   /* Text Inverse (noir sur fond clair) */
 
-  /* ========================================
+   /* ========================================
      TITRES (MODE SOMBRE)
      ======================================== */
-  --haylalana-heading-primary: #F8F8F8;
-  /* Heading Primary (blanc) */
-  --haylalana-heading-secondary: #B1BACA;
-  /* Heading Secondary */
-  --haylalana-heading-accent: #E82842;
-  /* Heading Accent (rouge/rose) */
+   --haylalana-heading-primary: #F8F8F8;
+   /* Heading Primary (blanc) */
+   --haylalana-heading-secondary: #B1BACA;
+   /* Heading Secondary */
+   --haylalana-heading-accent: #E82842;
+   /* Heading Accent (rouge/rose) */
 
-  /* ========================================
+   /* ========================================
      MARQUE (BORDEAUX MODE SOMBRE)
      ======================================== */
-  --haylalana-brand: #A51845;
-  /* Brand (bordeaux plus clair) */
-  --haylalana-brand-light: #E22050;
-  /* Brand Light */
-  --haylalana-brand-dark: #BC1B3D;
-  /* Brand Dark */
+   --haylalana-brand: #A51845;
+   /* Brand (bordeaux plus clair) */
+   --haylalana-brand-light: #E22050;
+   /* Brand Light */
+   --haylalana-brand-dark: #BC1B3D;
+   /* Brand Dark */
 
-  /* ========================================
+   /* ========================================
      ACCENT (ROSE MODE SOMBRE)
      ======================================== */
-  --haylalana-accent: #E72F8B;
-  /* Accent (rose plus clair) */
-  --haylalana-accent-light: #E72F8B;
-  /* Accent Light */
-  --haylalana-accent-dark: #DB2840;
-  /* Accent Dark */
+   --haylalana-accent: #E72F8B;
+   /* Accent (rose plus clair) */
+   --haylalana-accent-light: #E72F8B;
+   /* Accent Light */
+   --haylalana-accent-dark: #DB2840;
+   /* Accent Dark */
 
-  /* ========================================
+   /* ========================================
      BORDURES (MODE SOMBRE)
      ======================================== */
-  --haylalana-border-primary: #2F3238;
-  /* Border Primary */
-  --haylalana-border-secondary: #3A3B3D;
-  /* Border Secondary */
-  --haylalana-border-focus: #BC1B3D;
-  /* Border Focus */
+   --haylalana-border-primary: #2F3238;
+   /* Border Primary */
+   --haylalana-border-secondary: #3A3B3D;
+   /* Border Secondary */
+   --haylalana-border-focus: #BC1B3D;
+   /* Border Focus */
 
-  /* ========================================
+   /* ========================================
      ÉTATS - SUCCÈS (MODE SOMBRE)
      ======================================== */
-  --haylalana-success: #34D399;
-  /* Success (vert plus clair) */
-  --haylalana-success-bg: #064E3B;
-  /* Success BG */
+   --haylalana-success: #34D399;
+   /* Success (vert plus clair) */
+   --haylalana-success-bg: #064E3B;
+   /* Success BG */
 
-  /* ========================================
+   /* ========================================
      ÉTATS - ERREUR (MODE SOMBRE)
      ======================================== */
-  --haylalana-error: #F1313D;
-  /* Error (rouge plus clair) */
-  --haylalana-error-bg: #7F1D1D;
-  /* Error BG */
+   --haylalana-error: #F1313D;
+   /* Error (rouge plus clair) */
+   --haylalana-error-bg: #7F1D1D;
+   /* Error BG */
 
-  /* ========================================
+   /* ========================================
      ÉTATS - AVERTISSEMENT (MODE SOMBRE)
      ======================================== */
-  --haylalana-warning: #FCCD49;
-  /* Warning (jaune plus clair) */
-  --haylalana-warning-bg: #78350F;
-  /* Warning BG */
+   --haylalana-warning: #FCCD49;
+   /* Warning (jaune plus clair) */
+   --haylalana-warning-bg: #78350F;
+   /* Warning BG */
 
-  /* ========================================
+   /* ========================================
      ÉTATS - INFO (MODE SOMBRE)
      ======================================== */
-  --haylalana-info: #05B638;
-  /* Info (vert-bleu) */
-  --haylalana-info-bg: #1E3A8A;
-  /* Info BG */
+   --haylalana-info: #05B638;
+   /* Info (vert-bleu) */
+   --haylalana-info-bg: #1E3A8A;
+   /* Info BG */
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
+   * {
+      @apply border-border outline-ring/50;
+   }
 
-  body {
-    @apply bg-background text-foreground;
-  }
+   body {
+      @apply bg-background text-foreground;
+   }
 
-  /* Styles de base pour les titres */
-  h1 {
-    @apply text-haylalana-heading-primary font-bold text-5xl md:text-6xl leading-tight;
-  }
+   /* Styles de base pour les titres */
+   h1 {
+      @apply text-haylalana-heading-primary font-bold text-5xl md:text-6xl leading-tight;
+   }
 
-  h2 {
-    @apply text-haylalana-heading-primary font-bold text-4xl md:text-5xl leading-tight;
-  }
+   h2 {
+      @apply text-haylalana-heading-primary font-bold text-4xl md:text-5xl leading-tight;
+   }
 
-  h3 {
-    @apply text-haylalana-heading-secondary font-semibold text-3xl md:text-4xl leading-snug;
-  }
+   h3 {
+      @apply text-haylalana-heading-secondary font-semibold text-3xl md:text-4xl leading-snug;
+   }
 
-  h4 {
-    @apply text-haylalana-heading-secondary font-semibold text-2xl md:text-3xl leading-snug;
-  }
+   h4 {
+      @apply text-haylalana-heading-secondary font-semibold text-2xl md:text-3xl leading-snug;
+   }
 
-  h5 {
-    @apply text-haylalana-heading-secondary font-semibold text-xl md:text-2xl;
-  }
+   h5 {
+      @apply text-haylalana-heading-secondary font-semibold text-xl md:text-2xl;
+   }
 
-  h6 {
-    @apply text-haylalana-heading-secondary font-semibold text-lg md:text-xl;
-  }
+   h6 {
+      @apply text-haylalana-heading-secondary font-semibold text-lg md:text-xl;
+   }
 
-  /* Styles de paragraphe */
-  p {
-    @apply text-haylalana-text-secondary leading-relaxed;
-  }
+   /* Styles de paragraphe */
+   p {
+      @apply text-haylalana-text-secondary leading-relaxed;
+   }
 
-  /* Liens */
-  a {
-    @apply text-haylalana-brand hover:text-haylalana-brand-dark transition-colors underline-offset-4;
-  }
+   /* Liens */
+   a {
+      @apply text-haylalana-brand hover:text-haylalana-brand-dark transition-colors underline-offset-4;
+   }
 }
 
 @layer utilities {
 
-  /* Classe utilitaire pour gradient de marque */
-  .gradient-brand {
-    background: linear-gradient(135deg, var(--haylalana-brand) 0%, var(--haylalana-brand-dark) 100%);
-  }
+   /* Classe utilitaire pour gradient de marque */
+   .gradient-brand {
+      background: linear-gradient(135deg, var(--haylalana-brand) 0%, var(--haylalana-brand-dark) 100%);
+   }
 
-  /* Classe utilitaire pour gradient d'accent */
-  .gradient-accent {
-    background: linear-gradient(135deg, var(--haylalana-accent) 0%, var(--haylalana-accent-dark) 100%);
-  }
+   /* Classe utilitaire pour gradient d'accent */
+   .gradient-accent {
+      background: linear-gradient(135deg, var(--haylalana-accent) 0%, var(--haylalana-accent-dark) 100%);
+   }
 
-  /* Texte avec gradient */
-  .text-gradient-brand {
-    background: linear-gradient(135deg, var(--haylalana-brand) 0%, var(--haylalana-accent) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
+   /* Texte avec gradient */
+   .text-gradient-brand {
+      background: linear-gradient(135deg, var(--haylalana-brand) 0%, var(--haylalana-accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+   }
+}
+
+
+
+
+/* src/app/globals.css */
+@keyframes fade-in {
+   from {
+      opacity: 0;
+      transform: translateY(-20px);
+   }
+
+   to {
+      opacity: 1;
+      transform: translateY(0);
+   }
+}
+
+.animate-fade-in {
+   animation: fade-in 0.8s ease-out;
 }
