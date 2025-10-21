@@ -8,28 +8,28 @@ const ageCategories = [
     title: 'Enfants',
     description: 'Contenus adaptés pour les 6-12 ans',
     icon: Baby,
-    href: '/contenus/enfants',
+    href: '/contents/children',
   },
   {
     id: 'jeunes',
     title: 'Jeunes',
     description: 'Contenus pour les 13-17 ans',
     icon: GraduationCap,
-    href: '/contenus/jeunes',
+    href: '/contents/youth',
   },
   {
     id: 'adultes',
     title: 'Adultes',
     description: 'Contenus pour les 18 ans et plus',
     icon: Briefcase,
-    href: '/contenus/adultes',
+    href: '/contents/adults',
   },
   {
-    id: 'startup-pme',
+    id: 'startup',
     title: 'Startup',
     description: 'Ressources pour entrepreneurs et entreprises',
     icon: Rocket,
-    href: '/contenus/startup-pme',
+    href: '/contents/startup',
   },
 ];
 

@@ -36,20 +36,20 @@ export function Navbar() {
             href: '/contenus',
             hasDropdown: true,
             dropdownItems: [
-                { name: 'Enfants', href: '/contenus/enfants', icon: Baby },
-                { name: 'Jeunes', href: '/contenus/jeunes', icon: GraduationCap },
-                { name: 'Adultes', href: '/contenus/adultes', icon: Briefcase },
-                { name: 'Startup/PME', href: '/contenus/startup-pme', icon: Rocket },
+                { name: 'Enfants', href: '/contents/children', icon: Baby },
+                { name: 'Jeunes', href: '/contents/youth', icon: GraduationCap },
+                { name: 'Adultes', href: '/contents/adults', icon: Briefcase },
+                { name: 'Startup', href: '/contents/startup', icon: Rocket },
             ],
         },
         {
             name: 'Textes juridiques',
-            href: '/textes-juridiques',
+            href: '/legal-texts',
             icon: FileText,
         },
         {
             name: 'Annuaire',
-            href: '/annuaire',
+            href: '/directory',
             icon: Users,
         },
         {
