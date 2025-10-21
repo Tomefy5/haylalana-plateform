@@ -1,7 +1,7 @@
 // src/components/home/quick-access-cards.tsx
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Baby, GraduationCap, Briefcase } from 'lucide-react';
+import { ArrowRight, Baby, GraduationCap, Briefcase, Rocket } from 'lucide-react';
 
 const ageCategories = [
   {
@@ -24,6 +24,13 @@ const ageCategories = [
     description: 'Contenus pour les 18 ans et plus',
     icon: Briefcase,
     href: '/contenus/adultes',
+  },
+  {
+    id: 'startup-pme',
+    title: 'Startup/PME',
+    description: 'Ressources pour entrepreneurs et entreprises',
+    icon: Rocket,
+    href: '/contenus/startup-pme',
   },
 ];
 
@@ -51,12 +58,12 @@ export function QuickAccessCards() {
           </h2>
 
           <p className="text-base sm:text-lg text-haylalana-text-secondary max-w-2xl mx-auto">
-            Accédez rapidement aux contenus adaptés à votre âge
+            Accédez rapidement aux contenus adaptés à votre profil
           </p>
         </div>
 
-        {/* Grille de cartes uniformes */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        {/* Grille de cartes - 4 colonnes sur grand écran */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {ageCategories.map((category) => {
             const IconComponent = category.icon;
 
@@ -75,25 +82,25 @@ export function QuickAccessCards() {
                 aria-label={`Accéder aux contenus pour ${category.title.toLowerCase()}`}
               >
                 {/* Contenu de la carte */}
-                <div className="relative p-8 sm:p-10">
+                <div className="relative p-8">
 
                   {/* Icône avec fond coloré */}
                   <div className="
-                    w-16 h-16 sm:w-20 sm:h-20 mb-6 rounded-2xl
+                    w-16 h-16 mb-6 rounded-2xl
                     bg-gradient-to-br from-haylalana-brand to-haylalana-brand-dark
                     flex items-center justify-center
                     transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300
                   ">
-                    <IconComponent className="w-8 h-8 sm:w-10 sm:h-10 text-white" aria-hidden="true" />
+                    <IconComponent className="w-8 h-8 text-white" aria-hidden="true" />
                   </div>
 
                   {/* Titre */}
-                  <h3 className="text-2xl sm:text-3xl font-bold mb-3 text-haylalana-heading-accent">
+                  <h3 className="text-xl font-bold mb-3 text-haylalana-heading-accent">
                     {category.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-haylalana-text-secondary mb-6 text-base sm:text-lg leading-relaxed">
+                  <p className="text-haylalana-text-secondary mb-6 text-sm leading-relaxed">
                     {category.description}
                   </p>
 
