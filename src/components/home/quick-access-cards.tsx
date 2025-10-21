@@ -1,4 +1,3 @@
-// src/components/home/quick-access-cards.tsx
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Baby, GraduationCap, Briefcase, Rocket } from 'lucide-react';
@@ -27,7 +26,7 @@ const ageCategories = [
   },
   {
     id: 'startup-pme',
-    title: 'Startup/PME',
+    title: 'Startup',
     description: 'Ressources pour entrepreneurs et entreprises',
     icon: Rocket,
     href: '/contenus/startup-pme',
