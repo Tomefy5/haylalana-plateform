@@ -2,11 +2,16 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Users, BookOpen, Sparkles } from 'lucide-react';
+import { ArrowRight, Sparkles } from 'lucide-react';
+import StatItem from './hero-section-stat-item';
+
+
+import { HERO_STATS } from '@/lib/data/home-content';
 
 export function HeroSection() {
+
   return (
-    <header className="relative min-h-[700px] flex items-center justify-center overflow-hidden bg-gradient-to-br from-haylalana-bg-primary via-haylalana-brand/5 to-haylalana-bg-primary">
+    <section className="relative min-h-[700px] flex items-center justify-center overflow-hidden bg-gradient-to-br from-haylalana-bg-primary via-haylalana-brand/5 to-haylalana-bg-primary">
 
       {/* Patterns radiaux */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(133,7,36,0.08),transparent_50%)]" aria-hidden="true" />
@@ -20,16 +25,17 @@ export function HeroSection() {
           <div className="relative group">
             {/* Cercle extérieur animé */}
             <div className="absolute inset-0 rounded-full bg-gradient-to-br from-haylalana-brand/20 to-haylalana-accent/20 blur-2xl group-hover:blur-3xl transition-all duration-500 animate-pulse" aria-hidden="true" />
-
             {/* Cercle principal avec logo */}
             <div className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 rounded-full bg-gradient-to-br from-white to-haylalana-bg-secondary border-4 border-haylalana-brand/30 shadow-2xl flex items-center justify-center group-hover:scale-105 transition-transform duration-500 animate-fade-in">
               <Image
                 src="/icons/haylalana-icon-ss-bg.png"
-                alt="Logo Haylalàna"
+                alt="Logo Haylalàna - Vos droits expliqués" // Alt text plus descriptif
                 width={180}
                 height={180}
+                sizes="(max-width: 640px) 140px, (max-width: 768px) 160px, 180px"
                 className="object-contain p-4"
                 priority
+                quality={90}
               />
             </div>
 
@@ -94,38 +100,14 @@ export function HeroSection() {
 
         {/* Statistiques */}
         <div className="flex flex-wrap gap-12 justify-center items-center text-sm sm:text-base">
+          {
+            HERO_STATS.map((stats) => (
+              <StatItem key={stats.label} {...stats} />
+            ))
+          }
 
-          <div className="flex items-center gap-3">
-            <div className="p-3 rounded-full bg-haylalana-brand/10">
-              <Users className="w-5 h-5 text-haylalana-brand" aria-hidden="true" />
-            </div>
-            <div className="text-left">
-              <div className="font-bold text-haylalana-heading-primary text-lg">1000+</div>
-              <div className="text-haylalana-text-tertiary text-xs mt-1">Utilisateurs</div>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-3">
-            <div className="p-3 rounded-full bg-haylalana-brand/10">
-              <BookOpen className="w-5 h-5 text-haylalana-brand" aria-hidden="true" />
-            </div>
-            <div className="text-left">
-              <div className="font-bold text-haylalana-heading-primary text-lg">50+</div>
-              <div className="text-haylalana-text-tertiary text-xs mt-1">Articles</div>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-3">
-            <div className="p-3 rounded-full bg-haylalana-brand/10">
-              <Sparkles className="w-5 h-5 text-haylalana-brand" aria-hidden="true" />
-            </div>
-            <div className="text-left">
-              <div className="font-bold text-haylalana-heading-primary text-lg">100%</div>
-              <div className="text-haylalana-text-tertiary text-xs mt-1">Gratuit</div>
-            </div>
-          </div>
         </div>
       </div>
-    </header>
+    </section>
   );
 }

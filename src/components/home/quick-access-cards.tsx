@@ -1,37 +1,8 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Baby, GraduationCap, Briefcase, Rocket } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
-const ageCategories = [
-  {
-    id: 'enfants',
-    title: 'Enfants',
-    description: 'Contenus adaptés pour les 6-12 ans',
-    icon: Baby,
-    href: '/contents/children',
-  },
-  {
-    id: 'jeunes',
-    title: 'Jeunes',
-    description: 'Contenus pour les 13-17 ans',
-    icon: GraduationCap,
-    href: '/contents/youth',
-  },
-  {
-    id: 'adultes',
-    title: 'Adultes',
-    description: 'Contenus pour les 18 ans et plus',
-    icon: Briefcase,
-    href: '/contents/adults',
-  },
-  {
-    id: 'startup',
-    title: 'Startup',
-    description: 'Ressources pour entrepreneurs et entreprises',
-    icon: Rocket,
-    href: '/contents/startup',
-  },
-];
+import { AGE_CATEGORIES } from '@/lib/data/home-content';
 
 export function QuickAccessCards() {
   return (
@@ -63,7 +34,7 @@ export function QuickAccessCards() {
 
         {/* Grille de cartes - 4 colonnes sur grand écran */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {ageCategories.map((category) => {
+          {AGE_CATEGORIES.map((category) => {
             const IconComponent = category.icon;
 
             return (
