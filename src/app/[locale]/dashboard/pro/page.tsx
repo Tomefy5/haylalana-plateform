@@ -96,14 +96,16 @@ export default function ProDashboard() {
             <section>
                 <h2 className="text-xl font-bold text-haylalana-heading-primary mb-4">Outils de Gestion</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-                    <Card className="hover:shadow-md transition-shadow cursor-pointer border-haylalana-border-primary group">
-                        <CardContent className="p-6 flex flex-col items-center text-center">
-                            <div className="w-12 h-12 bg-haylalana-info-bg rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                                <Calculator className="w-6 h-6 text-haylalana-info" />
-                            </div>
-                            <h3 className="font-semibold text-haylalana-heading-primary">Simulateur Salaire</h3>
-                        </CardContent>
-                    </Card>
+                    <Link href="/dashboard/pro/simulator" passHref>
+                        <Card className="hover:shadow-md transition-shadow cursor-pointer border-haylalana-border-primary group h-full">
+                            <CardContent className="p-6 flex flex-col items-center text-center">
+                                <div className="w-12 h-12 bg-haylalana-info-bg rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                                    <Calculator className="w-6 h-6 text-haylalana-info" />
+                                </div>
+                                <h3 className="font-semibold text-haylalana-heading-primary">Simulateur Charges</h3>
+                            </CardContent>
+                        </Card>
+                    </Link>
 
                     <Card className="hover:shadow-md transition-shadow cursor-pointer border-haylalana-border-primary group">
                         <CardContent className="p-6 flex flex-col items-center text-center">
