@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export default function ProDashboard() {
     return (
-        <div className="space-y-8">
+        <div className="space-y-8 animate-fade-in">
             {/* Header */}
             <div className="flex justify-between items-end">
                 <div>
