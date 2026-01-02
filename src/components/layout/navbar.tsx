@@ -170,10 +170,16 @@ export function Navbar() {
                     <div className="hidden lg:flex items-center gap-3">
                         <Button
                             asChild
-                            variant="outline"
-                            className="border-2 border-haylalana-brand text-haylalana-brand hover:bg-haylalana-brand hover:text-white font-semibold"
+                            variant="ghost"
+                            className="text-haylalana-text-primary hover:text-haylalana-brand hover:bg-haylalana-brand/5 font-medium"
                         >
-                            <Link href="/contact">Nous contacter</Link>
+                            <Link href="/login">Se connecter</Link>
+                        </Button>
+                        <Button
+                            asChild
+                            className="bg-haylalana-brand hover:bg-haylalana-brand-dark text-white font-semibold shadow-sm hover:shadow-md transition-all"
+                        >
+                            <Link href="/register">S'inscrire</Link>
                         </Button>
                     </div>
 
@@ -258,13 +264,22 @@ export function Navbar() {
                         </div>
 
                         {/* CTA Mobile */}
-                        <div className="mt-4 pt-4 border-t border-haylalana-border-primary">
+                        <div className="mt-4 pt-4 border-t border-haylalana-border-primary flex flex-col gap-3">
+                            <Button
+                                asChild
+                                variant="outline"
+                                className="w-full justify-center border-haylalana-border-primary text-haylalana-text-primary"
+                            >
+                                <Link href="/login" onClick={() => setMobileMenuOpen(false)}>
+                                    Se connecter
+                                </Link>
+                            </Button>
                             <Button
                                 asChild
                                 className="w-full bg-haylalana-brand hover:bg-haylalana-brand-dark text-white font-semibold"
                             >
-                                <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
-                                    Nous contacter
+                                <Link href="/register" onClick={() => setMobileMenuOpen(false)}>
+                                    S'inscrire
                                 </Link>
                             </Button>
                         </div>
