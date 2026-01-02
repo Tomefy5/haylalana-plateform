@@ -1,7 +1,7 @@
 // src/components/contact/contact-form.tsx
 'use client';
 
-import { useState } from 'react';
+import { useState, memo } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { contactFormSchema, ContactFormValues } from '@/lib/validations';
@@ -11,7 +11,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Send, CheckCircle, AlertCircle } from 'lucide-react';
 
-export function ContactForm() {
+const ContactForm = memo(function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
@@ -176,4 +176,6 @@ export function ContactForm() {
       </Button>
     </form>
   );
-}
+});
+
+export { ContactForm };
