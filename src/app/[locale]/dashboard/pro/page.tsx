@@ -55,41 +55,43 @@ export default function ProDashboard() {
                 </Card>
 
                 {/* Échéances */}
-                <Card className="border-haylalana-border-primary shadow-sm">
-                    <CardHeader>
-                        <CardTitle className="text-lg flex items-center gap-2">
-                            <Calendar className="w-5 h-5 text-haylalana-accent" />
-                            Échéances Fiscales
-                        </CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                        <ul className="space-y-4">
-                            <li className="flex gap-3">
-                                <div className="bg-haylalana-bg-secondary w-12 flex flex-col items-center justify-center rounded p-1 text-center">
-                                    <span className="text-xs font-bold text-haylalana-text-tertiary">OCT</span>
-                                    <span className="text-lg font-bold text-haylalana-heading-primary">15</span>
-                                </div>
-                                <div>
-                                    <p className="font-semibold text-sm">Déclaration IRSA</p>
-                                    <p className="text-xs text-haylalana-warning">Dans 3 jours</p>
-                                </div>
-                            </li>
-                            <li className="flex gap-3">
-                                <div className="bg-haylalana-bg-secondary w-12 flex flex-col items-center justify-center rounded p-1 text-center">
-                                    <span className="text-xs font-bold text-haylalana-text-tertiary">NOV</span>
-                                    <span className="text-lg font-bold text-haylalana-heading-primary">15</span>
-                                </div>
-                                <div>
-                                    <p className="font-semibold text-sm">Acompte IS</p>
-                                    <p className="text-xs text-haylalana-success">Payé</p>
-                                </div>
-                            </li>
-                        </ul>
-                        <Button variant="ghost" className="w-full mt-4 text-xs text-haylalana-text-secondary">
-                            Voir le calendrier complet
-                        </Button>
-                    </CardContent>
-                </Card>
+                <Link href="/dashboard/pro/obligations" passHref className="block h-full">
+                    <Card className="border-haylalana-border-primary shadow-sm hover:border-haylalana-brand transition-colors cursor-pointer h-full">
+                        <CardHeader>
+                            <CardTitle className="text-lg flex items-center gap-2">
+                                <Calendar className="w-5 h-5 text-haylalana-accent" />
+                                Échéances & Obligations
+                            </CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                            <ul className="space-y-4">
+                                <li className="flex gap-3">
+                                    <div className="bg-haylalana-bg-secondary w-12 flex flex-col items-center justify-center rounded p-1 text-center">
+                                        <span className="text-xs font-bold text-haylalana-text-tertiary">OCT</span>
+                                        <span className="text-lg font-bold text-haylalana-heading-primary">15</span>
+                                    </div>
+                                    <div>
+                                        <p className="font-semibold text-sm">Déclaration IRSA</p>
+                                        <p className="text-xs text-haylalana-warning">Dans 3 jours</p>
+                                    </div>
+                                </li>
+                                <li className="flex gap-3">
+                                    <div className="bg-haylalana-bg-secondary w-12 flex flex-col items-center justify-center rounded p-1 text-center">
+                                        <span className="text-xs font-bold text-haylalana-text-tertiary">NOV</span>
+                                        <span className="text-lg font-bold text-haylalana-heading-primary">15</span>
+                                    </div>
+                                    <div>
+                                        <p className="font-semibold text-sm">Acompte IS</p>
+                                        <p className="text-xs text-haylalana-success">Payé</p>
+                                    </div>
+                                </li>
+                            </ul>
+                            <Button variant="ghost" className="w-full mt-4 text-xs text-haylalana-text-secondary hover:text-haylalana-brand">
+                                Voir le calendrier complet
+                            </Button>
+                        </CardContent>
+                    </Card>
+                </Link>
             </section>
 
             {/* Outils Rapides */}
