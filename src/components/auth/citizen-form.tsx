@@ -5,19 +5,24 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { ArrowLeft, UserPlus } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 interface CitizenFormProps {
     onBack: () => void;
 }
 
 export function CitizenForm({ onBack }: CitizenFormProps) {
+    const router = useRouter();
     const [isLoading, setIsLoading] = useState(false);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsLoading(true);
         // Simulation
-        setTimeout(() => setIsLoading(false), 2000);
+        setTimeout(() => {
+            setIsLoading(false);
+            router.push('/dashboard/citizen');
+        }, 1500);
     };
 
     return (

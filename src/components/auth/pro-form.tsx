@@ -5,19 +5,24 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { ArrowLeft, Building2 } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 interface ProFormProps {
     onBack: () => void;
 }
 
 export function ProForm({ onBack }: ProFormProps) {
+    const router = useRouter();
     const [isLoading, setIsLoading] = useState(false);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsLoading(true);
         // Simulation
-        setTimeout(() => setIsLoading(false), 2000);
+        setTimeout(() => {
+            setIsLoading(false);
+            router.push('/dashboard/pro');
+        }, 1500);
     };
 
     return (

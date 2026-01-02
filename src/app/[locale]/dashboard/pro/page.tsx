@@ -22,7 +22,7 @@ export default function ProDashboard() {
 
             {/* Santé Juridique */}
             <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <Card className="col-span-1 md:col-span-2 bg-gradient-to-r from-haylalana-bg-dark to-slate-800 text-white border-0 shadow-lg">
+                <Card className="col-span-1 md:col-span-2 bg-gradient-to-r from-haylalana-brand-dark to-haylalana-bg-dark text-white border-0 shadow-lg">
                     <CardHeader>
                         <div className="flex justify-between items-start">
                             <CardTitle className="flex items-center gap-2">
@@ -38,15 +38,15 @@ export default function ProDashboard() {
                                 <span className="text-3xl font-bold">85%</span>
                             </div>
                             <div className="flex-1 space-y-4">
-                                <p className="text-gray-300 text-sm">Votre entreprise est en bonne conformité. Quelques documents nécessitent une mise à jour mineure.</p>
+                                <p className="text-haylalana-text-inverse/80 text-sm">Votre entreprise est en bonne conformité. Quelques documents nécessitent une mise à jour mineure.</p>
                                 <div className="grid grid-cols-2 gap-4">
                                     <div className="bg-white/10 p-3 rounded-lg">
                                         <div className="text-2xl font-bold">12</div>
-                                        <div className="text-xs text-gray-400">Docs Validés</div>
+                                        <div className="text-xs text-haylalana-text-inverse/60">Docs Validés</div>
                                     </div>
                                     <div className="bg-white/10 p-3 rounded-lg">
                                         <div className="text-2xl font-bold text-haylalana-warning">2</div>
-                                        <div className="text-xs text-gray-400">À Revoir</div>
+                                        <div className="text-xs text-haylalana-text-inverse/60">À Revoir</div>
                                     </div>
                                 </div>
                             </div>

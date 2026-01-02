@@ -7,15 +7,21 @@ import { Label } from '@/components/ui/label';
 import Link from 'next/link';
 import { Card } from '@/components/ui/card';
 import { LogIn, ArrowRight } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 export default function LoginPage() {
+    const router = useRouter();
     const [isLoading, setIsLoading] = useState(false);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsLoading(true);
         // Simulation
-        setTimeout(() => setIsLoading(false), 2000);
+        setTimeout(() => {
+            setIsLoading(false);
+            // Par défaut pour la démo, redirection vers dashboard citoyen
+            router.push('/dashboard/citizen');
+        }, 1500);
     };
 
     return (
