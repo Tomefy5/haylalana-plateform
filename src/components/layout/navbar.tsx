@@ -18,7 +18,8 @@ import {
     Briefcase,
     Rocket,
     ChevronDown,
-    Bot
+    Bot,
+    ClipboardList
 } from 'lucide-react';
 import Image from 'next/image';
 
@@ -67,6 +68,11 @@ export function Navbar() {
             name: 'Conseiller IA',
             href: '/dashboard/advisor',
             icon: Bot,
+        },
+        {
+            name: 'Démarches',
+            href: '/dashboard/procedures',
+            icon: ClipboardList,
         },
     ];
 
