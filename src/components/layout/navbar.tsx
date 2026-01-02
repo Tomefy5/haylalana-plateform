@@ -17,7 +17,8 @@ import {
     GraduationCap,
     Briefcase,
     Rocket,
-    ChevronDown
+    ChevronDown,
+    Bot
 } from 'lucide-react';
 import Image from 'next/image';
 
@@ -61,6 +62,11 @@ export function Navbar() {
             name: 'Contact',
             href: '/contact',
             icon: MessageSquare,
+        },
+        {
+            name: 'Conseiller IA',
+            href: '/dashboard/advisor',
+            icon: Bot,
         },
     ];
 
