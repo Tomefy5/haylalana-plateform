@@ -3,15 +3,17 @@
   
   # Haylalàna
 
-  **La première plateforme malgache de démocratisation du droit**
+  **The first Malagasy platform for democratizing law**
   
-  *"Je connais mes droits, j'ose les faire valoir"*
+  *"I know my rights, I dare to assert them"*
 
   [![Next.js](https://img.shields.io/badge/Next.js-15.5-black?style=flat-square&logo=next.js)](https://nextjs.org/)
   [![React](https://img.shields.io/badge/React-19.1-61DAFB?style=flat-square&logo=react)](https://react.dev/)
   [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
   [![TailwindCSS](https://img.shields.io/badge/Tailwind-4-06B6D4?style=flat-square&logo=tailwindcss)](https://tailwindcss.com/)
-  [![License](https://img.shields.io/badge/License-Private-red?style=flat-square)]()
+  [![License](https://img.shields.io/badge/License-Proprietary-red?style=flat-square)]()
+
+  🇫🇷 [Version Française](README.fr.md)
 
 </div>
 
@@ -19,40 +21,40 @@
 
 ## 🎯 Vision
 
-Être **la référence numérique du droit vulgarisé** à Madagascar, puis en Afrique francophone.
+To become **the digital reference for accessible law** in Madagascar, then across French-speaking Africa.
 
-Un espace où chaque citoyen peut comprendre ses droits, ses devoirs, et les moyens d'agir.
+A space where every citizen can understand their rights, duties, and means of action.
 
-## 🔥 Problèmes Résolus
+## 🔥 Problems We Solve
 
-| Problème | Impact | Solution Haylalàna |
-|----------|--------|-------------------|
-| **Inaccessibilité juridique** | Citoyens vulnérables | Contenus vulgarisés en français et malgache |
-| **Coût des consultations** | Renoncement aux droits | Guides gratuits + annuaire transparent |
-| **Manque de visibilité** | Marché fragmenté | Plateforme de mise en relation |
-| **Déficit éducatif** | Abus non contestés | Éducation citoyenne gamifiée |
+| Problem | Impact | Haylalàna Solution |
+|---------|--------|-------------------|
+| **Legal inaccessibility** | Vulnerable citizens | Simplified content in French & Malagasy |
+| **Consultation costs** | Rights abandonment | Free guides + transparent directory |
+| **Lack of visibility** | Fragmented market | Connection platform |
+| **Education gap** | Unchallenged abuses | Gamified civic education |
 
-## ✨ Fonctionnalités
+## ✨ Features
 
-### 🏠 Pour les Citoyens
-- **Dashboard personnalisé** avec système de progression et badges
-- **Passeport Juridique** : suivi des apprentissages et compétences acquises
-- **Conseiller IA** : assistant virtuel juridique disponible 24/7
-- **Guide des Démarches** : accompagnement pas-à-pas avec cartes et horaires
+### 🏠 For Citizens
+- **Personalized dashboard** with progression system and badges
+- **Legal Passport**: track learning and acquired skills
+- **AI Advisor**: virtual legal assistant available 24/7
+- **Procedures Guide**: step-by-step guidance with maps and schedules
 
-### 🏢 Pour les Professionnels
-- **Tableau de bord Pro** avec indicateur de santé juridique
-- **Gestion des Obligations** : timeline des échéances fiscales et légales
-- **Simulateur de Charges** : calculs automatisés (IRSA, CNAPS, etc.)
-- **Générateur de Contrats** : templates légaux prêts à l'emploi
+### 🏢 For Professionals
+- **Pro Dashboard** with legal health indicator
+- **Obligations Management**: timeline of fiscal and legal deadlines
+- **Charges Simulator**: automated calculations (IRSA, CNAPS, etc.)
+- **Contract Generator**: ready-to-use legal templates
 
-### 📚 Contenus Éducatifs
-- Guides par profil : Enfants, Jeunes, Adultes, Startups
-- Quiz interactifs avec système XP
-- Articles de blog juridiques
-- Textes de loi vulgarisés
+### 📚 Educational Content
+- Guides by profile: Children, Youth, Adults, Startups
+- Interactive quizzes with XP system
+- Legal blog articles
+- Simplified law texts
 
-## 🛠️ Stack Technique
+## 🛠️ Tech Stack
 
 ```
 Frontend
@@ -60,99 +62,99 @@ Frontend
 ├── React 19.1
 ├── TypeScript 5
 ├── TailwindCSS 4
-└── Radix UI (Composants accessibles)
+└── Radix UI (Accessible components)
 
-Fonctionnalités
+Features
 ├── next-intl (i18n - FR/MG)
 ├── next-pwa (Progressive Web App)
-├── react-hook-form + zod (Formulaires)
-└── lucide-react (Icônes)
+├── react-hook-form + zod (Forms)
+└── lucide-react (Icons)
 ```
 
-## 🚀 Démarrage Rapide
+## 🚀 Quick Start
 
-### Prérequis
+### Prerequisites
 - Node.js 18+
-- npm ou yarn
+- npm or yarn
 
 ### Installation
 
 ```bash
-# Cloner le repository
+# Clone the repository
 git clone https://github.com/Tomefy5/haylalana-plateform.git
 cd haylalana-plateform
 
-# Installer les dépendances
+# Install dependencies
 npm install
 
-# Lancer en développement
+# Run in development mode
 npm run dev
 ```
 
-L'application sera accessible sur `http://localhost:3000`
+The application will be available at `http://localhost:3000`
 
-### Scripts Disponibles
+### Available Scripts
 
-| Commande | Description |
-|----------|-------------|
-| `npm run dev` | Serveur de développement |
-| `npm run build` | Build de production |
-| `npm run start` | Serveur de production |
-| `npm run lint` | Vérification ESLint |
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Development server |
+| `npm run build` | Production build |
+| `npm run start` | Production server |
+| `npm run lint` | ESLint check |
 
-## 📁 Structure du Projet
+## 📁 Project Structure
 
 ```
 src/
 ├── app/
-│   └── [locale]/           # Routes internationalisées
-│       ├── dashboard/      # Dashboards Citoyen & Pro
-│       │   ├── citizen/    # Espace citoyen
-│       │   ├── pro/        # Espace professionnel
-│       │   ├── advisor/    # Conseiller IA
-│       │   └── procedures/ # Guide des démarches
-│       ├── login/          # Authentification
-│       ├── register/       # Inscription
-│       ├── contents/       # Contenus éducatifs
+│   └── [locale]/           # Internationalized routes
+│       ├── dashboard/      # Citizen & Pro Dashboards
+│       │   ├── citizen/    # Citizen space
+│       │   ├── pro/        # Professional space
+│       │   ├── advisor/    # AI Advisor
+│       │   └── procedures/ # Procedures guide
+│       ├── login/          # Authentication
+│       ├── register/       # Registration
+│       ├── contents/       # Educational content
 │       └── blog/           # Articles
 ├── components/
-│   ├── ui/                 # Composants réutilisables
-│   ├── auth/               # Formulaires d'auth
+│   ├── ui/                 # Reusable components
+│   ├── auth/               # Auth forms
 │   ├── dashboard/          # Sidebar, navigation
 │   └── layout/             # Navbar, Footer
-└── lib/                    # Utilitaires
+└── lib/                    # Utilities
 ```
 
-## 🌍 Internationalisation
+## 🌍 Internationalization
 
-Le projet supporte deux langues :
-- 🇫🇷 **Français** (par défaut)
-- 🇲🇬 **Malgache**
+The project supports two languages:
+- 🇫🇷 **French** (default)
+- 🇲🇬 **Malagasy**
 
-Les fichiers de traduction sont dans `/locales/`.
+Translation files are located in `/locales/`.
 
-## 💎 Valeurs
+## 💎 Core Values
 
-| Valeur | Description |
-|--------|-------------|
-| **Accessibilité** | Le droit à la portée de tous |
-| **Connaissance** | Éducation utile, vivante et quotidienne |
-| **Empowerment** | Le droit comme outil d'émancipation |
-| **Impact Social** | Changement réel dans la société |
-| **Équité** | Justice de l'information pour tous |
+| Value | Description |
+|-------|-------------|
+| **Accessibility** | Law within everyone's reach |
+| **Knowledge** | Useful, living, everyday education |
+| **Empowerment** | Law as a tool for emancipation |
+| **Social Impact** | Real change in society |
+| **Equity** | Information justice for all |
 
-## 🤝 Contribution
+## 🤝 Contributing
 
-Ce projet est actuellement en développement privé. Pour toute question ou proposition de collaboration, veuillez contacter l'équipe Haylalàna.
+This project is currently in private development. For any questions or collaboration proposals, please contact the Haylalàna team.
 
-## 📄 Licence
+## 📄 License
 
-Ce projet est sous **Licence Propriétaire**. Tous droits réservés © 2026 Haylalàna.
+This project is under **Proprietary License**. All rights reserved © 2026 Haylalàna.
 
-Voir le fichier [LICENSE](LICENSE) pour plus de détails.
+See the [LICENSE](LICENSE) file for more details.
 
 ---
 
 <div align="center">
-  <strong>Haylalàna</strong> — Démocratiser le droit, un citoyen à la fois.
+  <strong>Haylalàna</strong> — Democratizing law, one citizen at a time.
 </div>
