@@ -147,7 +147,9 @@ Ce projet est actuellement en développement privé. Pour toute question ou prop
 
 ## 📄 Licence
 
-Ce projet est propriétaire et privé. Tous droits réservés © 2026 Haylalàna.
+Ce projet est sous **Licence Propriétaire**. Tous droits réservés © 2026 Haylalàna.
+
+Voir le fichier [LICENSE](LICENSE) pour plus de détails.
 
 ---
 
